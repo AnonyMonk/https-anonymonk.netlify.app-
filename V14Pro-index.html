@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anonymonk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin:0;
+  font-family:'Manrope', sans-serif;
+  background: radial-gradient(circle at top, #140a1f, #07040d);
+  color:white;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+  content:"";
+  position:fixed;
+  width:900px;
+  height:900px;
+  top:-300px;
+  left:-300px;
+  background: radial-gradient(circle, rgba(180,120,255,0.2), transparent 60%);
+  filter: blur(140px);
+  z-index:-1;
+}
+
+/* TOPBAR */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 30px;
+}
+
+.logo {
+  font-family:'Space Grotesk';
+  letter-spacing:3px;
+  color:#d7b3ff;
+}
+
+/* LIVE BADGE */
+.live-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:999px;
+  background: rgba(0, 255, 120, 0.12);
+  border:1px solid rgba(0,255,120,0.4);
+  color:#3CFF8F;
+  font-weight:600;
+  font-size:13px;
+  margin-bottom:20px;
+  box-shadow:0 0 25px rgba(0,255,120,0.15);
+}
+
+.dot {
+  width:8px;
+  height:8px;
+  background:#3CFF8F;
+  border-radius:50%;
+  box-shadow:0 0 10px #3CFF8F;
+}
+
+/* HERO */
+.hero {
+  text-align:center;
+  padding:140px 20px 80px;
+}
+
+.title {
+  font-family:'Space Grotesk';
+  font-size:46px;
+  text-shadow:0 0 20px rgba(180,120,255,0.6);
+}
+
+.subtitle {
+  font-size:12px;
+  letter-spacing:2px;
+  color:#caaeff;
+}
+
+.slogan {
+  margin-top:25px;
+  font-family:'Space Grotesk';
+  font-size:38px;
+}
+
+.slogan span {
+  color:#d7b3ff;
+}
+
+/* LORE */
+.lore {
+  max-width:720px;
+  margin:25px auto;
+  opacity:0.8;
+}
+
+/* BUTTONS */
+.cta-row {
+  margin-top:35px;
+}
+
+.btn {
+  padding:16px 26px; /* 👈 più grandi */
+  border-radius:18px; /* 👈 più arrotondati */
+  border:none;
+  cursor:pointer;
+  margin:8px;
+  font-size:14px;
+  transition:0.25s;
+  font-weight:600;
+}
+
+.primary {
+  background: linear-gradient(90deg, #ffd36e, #ffb300);
+  color:black;
+  box-shadow:0 0 25px rgba(255,180,0,0.25);
+}
+
+.primary:hover {
+  transform:scale(1.08);
+  box-shadow:0 0 40px rgba(255,180,0,0.5);
+}
+
+.ghost {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(200,170,255,0.25);
+  color:#e7dbff;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card {
+  background:rgba(255,255,255,0.03);
+  padding:24px;
+  border-radius:16px;
+  border:1px solid rgba(200,170,255,0.15);
+}
+
+/* SECTION */
+.section {
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.section h2 {
+  font-family:'Space Grotesk';
+  color:#d7b3ff;
+}
+
+.section p {
+  opacity:0.8;
+  line-height:1.6;
+}
+
+/* CTA FINAL */
+.cta {
+  text-align:center;
+  padding:100px 20px;
+}
+
+.footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.3;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="logo">ANONYMONK</div>
+  <div>
+    <button class="btn ghost" onclick="openX()">X</button>
+    <button class="btn ghost" onclick="openTG()">Telegram</button>
+    <button class="btn primary" onclick="buy()">BUY</button>
+  </div>
+</div>
+
+<div class="hero">
+
+  <!-- LIVE NOW BADGE -->
+  <div class="live-badge">
+    <div class="dot"></div>
+    Live now on Pump.fun
+  </div>
+
+  <div class="title">ANONYMOUS MONKEY</div>
+  <div class="subtitle">EARLY STAGE MEMECOIN</div>
+
+  <div class="slogan">
+    FOLLOW THE SIGNAL.<br>
+    <span>OWN THE NARRATIVE.</span>
+  </div>
+
+  <div class="lore">
+    ANONYMONK is an Anonymous Monkey memecoin built around attention, memes and community momentum on Pump.fun.
+  </div>
+
+  <div class="cta-row">
+    <button class="btn primary" onclick="buy()">BUY ON PUMP.FUN</button>
+    <button class="btn ghost" onclick="openTG()">JOIN COMMUNITY</button>
+    <button class="btn ghost" onclick="openX()">FOLLOW X</button>
+  </div>
+
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Community Driven</h3>
+    <p>The narrative grows with collective participation.</p>
+  </div>
+
+  <div class="card">
+    <h3>Meme Powered</h3>
+    <p>Built on internet culture and viral momentum.</p>
+  </div>
+
+  <div class="card">
+    <h3>Early Entry</h3>
+    <p>Early awareness defines exposure to growth cycles.</p>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>The Origin</h2>
+  <p>
+    Anonymonk emerged from the idea that attention is the most powerful asset in digital markets.
+    The Anonymous Monkey represents a silent observer inside the noise of internet culture.
+  </p>
+</div>
+
+<div class="section">
+  <h2>The Concept</h2>
+  <p>
+    This is not about promises or utility. It is about narrative, timing and collective attention.
+    Anonymonk exists where memes evolve into movement.
+  </p>
+</div>
+
+<div class="section">
+  <h2>How It Moves</h2>
+  <p>
+    Every phase is shaped by participation. Early presence influences perception, and perception drives momentum.
+  </p>
+</div>
+
+<div class="cta">
+  <h2>ENTER EARLY. FOLLOW THE FLOW.</h2>
+  <button class="btn primary" onclick="buy()">BUY NOW</button>
+</div>
+
+<div class="footer">
+  ANONYMONK
+</div>
+
+<script>
+
+const PUMP = "https://pump.fun/YOUR_TOKEN_HERE";
+
+function openX(){
+  window.open("https://x.com/anonymonkcoin","_blank");
+}
+
+function openTG(){
+  window.open("https://t.me/anonymonk","_blank");
+}
+
+function buy(){
+  window.open(PUMP,"_blank");
+}
+
+</script>
+
+</body>
+</html>
